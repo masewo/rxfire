@@ -76,10 +76,10 @@
     "lint": "eslint -c .eslintrc.js '**/*.ts' --ignore-path './.gitignore'",
     "lint:fix": "eslint --fix -c .eslintrc.js '**/*.ts' --ignore-path './.gitignore'",
     "build": "run-s build:**",
-    "build:clean": "rm -rf dist",
+    "build:clean": "rimraf dist",
     "build:types": "tsc --emitDeclarationOnly",
     "build:rollup": "rollup -c",
-    "build:docs": "cp README.md ./dist/ && cp -r ./docs ./dist/",
+    "build:docs": "cpx README.md ./dist/ && cpx docs/**/* ./dist/docs/",
     "dev": "rollup -c -w",
     "echo:chrome": "echo 'Open Chrome DevTools: \nchrome://inspect/#devices'",
     "test": "firebase emulators:exec \"jest --detectOpenHandles\" --project=rxfire-test-c497c",
@@ -87,7 +87,6 @@
     "emulators": "firebase emulators:start --project=rxfire-test-c497c",
     "jest": "jest --detectOpenHandles"
   },
-  "dependencies": {},
   "peerDependencies": {
     "firebase": "^9.0.0 || ^10.0.0 || ^11.0.0",
     "rxjs": "^6.0.0 || ^7.0.0"
@@ -103,6 +102,7 @@
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "babel-jest": "^29.6.4",
+    "cpx": "^1.5.0",
     "cross-fetch": "^3.1.4",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
@@ -113,6 +113,7 @@
     "jest-environment-jsdom": "^29.6.4",
     "md5": "^2.3.0",
     "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
     "rollup": "^2.33.2",
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rxjs": "^7.0.0",
