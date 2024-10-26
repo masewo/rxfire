@@ -1,6 +1,6 @@
 {
-  "name": "@masewo/rxfire",
-  "version": "6.0.8",
+  "name": "rxfire",
+  "version": "6.0.9",
   "description": "Firebase JavaScript library RxJS",
   "author": "Firebase <firebase-support@google.com> (https://firebase.google.com/)",
   "license": "Apache-2.0",
